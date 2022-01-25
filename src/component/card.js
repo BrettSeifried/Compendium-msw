@@ -1,12 +1,15 @@
 import React from 'react';
 
-export default function DisplayData({ data }) {
-  console.log(data.message);
+export default function DisplayData({ data: data }) {
+  console.log('data', data);
   return (
-    <div key="key">
-      {data.map(({ message }) => (
-        <img key="key" src={`&{message}`} alt="dog picture"></img>
+    <div>
+      {data.map((kuroko) => (
+        <p key={kuroko.mal_id}>
+          <h1>{kuroko.title}</h1>
+        </p>
       ))}
+      ;
     </div>
   );
 }

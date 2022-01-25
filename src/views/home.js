@@ -9,9 +9,8 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       const data = await cardData();
-      setData(data);
+      setData(data.data);
       setLoading(false);
-      console.log(data);
     };
     fetchData();
   }, []);
