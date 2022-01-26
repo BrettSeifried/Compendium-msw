@@ -1,13 +1,14 @@
 import React from 'react';
 
-export default function DisplayData({ data: data }) {
-  console.log('data', data);
+export default function DisplayData({ filter: filter }) {
+  console.log('filter', filter);
   return (
     <div>
-      {data.map((kuroko) => (
+      {filter.map((kuroko) => (
         <p key={kuroko.mal_id}>
           <h1>{kuroko.title}</h1>
-          <img src={kuroko.images.jpg.image_url} alt="image"></img>
+          <img src={kuroko.images.jpg.image_url} alt={kuroko.title}></img>
+          <>Favorited: {kuroko.favorites}</>
         </p>
       ))}
       ;
