@@ -1,4 +1,4 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import DisplayData from '../component/card';
 import Home from './home';
 
@@ -157,8 +157,6 @@ test('should render a search bar', async () => {
 
   const header = screen.getByRole('heading', { name: /search for your anime/i });
   expect(header).toBeInTheDocument();
-
-  // await waitForElementToBeRemoved(() => screen.getByTestId(/loading.../i));
 });
 
 test('should render movie card', async () => {
