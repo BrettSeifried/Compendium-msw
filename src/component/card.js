@@ -1,7 +1,6 @@
 import React from 'react';
 
 export default function DisplayData({ filter: filter }) {
-  console.log('filter', filter);
   return (
     <div>
       {filter.map((kuroko) => (
