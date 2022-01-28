@@ -3,16 +3,12 @@ import userEvent from '@testing-library/user-event';
 import Home from '../views/home';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
-import { user } from '../services/data';
+import { billy } from '../services/data';
 import App from '../App';
 
 const server = setupServer(
-  rest.get('https://api.jikan.moe/v4/anime/rest/v1/users', (req, res, ctx) => {
-    const select = req.url.searchParams.get('select');
-    if (select === '*') {
-      return res(ctx.json(user));
-    }
-    return res(ctx.status(500));
+  rest.get('https://api.jikan.moe/v4/anime', (req, res, ctx) => {
+    return res(ctx.json(billy));
   })
 );
 
