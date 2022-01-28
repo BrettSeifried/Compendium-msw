@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DisplayData({ filter: filter }) {
+export default function DisplayData({ filter }) {
   return (
     <div>
       {filter.map((kuroko) => (
