@@ -1,10 +1,9 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { rest } from 'msw';
 import { setupServer } from 'msw/node';
 import DisplayData from './component/card';
 import { billy } from './services/data';
 import App from './App';
-import Home from './views/home';
 
 const server = setupServer(
   rest.get('https://api.jikan.moe/v4/anime', (req, res, ctx) => {
